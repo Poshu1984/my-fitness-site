@@ -6,134 +6,69 @@
     <title>POSHU WANG 汪瀞教練 | I30 訓練系統</title>
     <style>
         :root {
-            --primary-color: #d4a373; 
-            --dark-color: #1a1a1a;
-            --light-color: #f8f9fa;
+            --primary-color: #d4a373; /* 質感金 */
+            --bg-dark: #0a0a0a;      /* 深黑背景 */
+            --card-bg: #161616;      /* 卡片深灰 */
+            --text-light: #e0e0e0;
+            --text-muted: #a0a0a0;
         }
-        body { font-family: "Microsoft JhengHei", sans-serif; margin: 0; background: var(--light-color); color: var(--dark-color); line-height: 1.6; }
-        header { background: var(--dark-color); color: white; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
-        .hero { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('gym-bg.jpg') center/cover; height: 60vh; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
-        .hero h1 { font-size: 3.5rem; margin-bottom: 10px; letter-spacing: 2px; }
-        .section { padding: 80px 10%; }
+        
+        body { 
+            font-family: "Microsoft JhengHei", sans-serif; 
+            margin: 0; 
+            background: var(--bg-dark); 
+            color: var(--text-light); 
+            line-height: 1.6; 
+        }
+
+        /* 導航欄 */
+        header { 
+            background: rgba(0,0,0,0.9); 
+            backdrop-filter: blur(10px);
+            color: white; 
+            padding: 1.2rem 5%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000;
+            border-bottom: 1px solid #333;
+        }
+
+        /* 英雄區 */
+        .hero { 
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)), url('gym-bg.jpg') center/cover; 
+            height: 65vh; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            text-align: center; 
+        }
+        .hero h1 { font-size: 4rem; margin-bottom: 10px; letter-spacing: 5px; color: #fff; text-shadow: 0 0 20px rgba(255,255,255,0.2); }
+        .hero p { font-size: 1.3rem; letter-spacing: 4px; color: var(--primary-color); font-weight: 300; }
+
+        .section { padding: 100px 10%; }
         .highlight { color: var(--primary-color); font-weight: bold; }
-        
-        /* 資歷區塊樣式 */
-        .exp-container { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-        .exp-title { color: var(--primary-color); font-weight: bold; border-bottom: 2px solid var(--primary-color); padding-bottom: 5px; margin-bottom: 15px; font-size: 1.2rem; }
-        .exp-list { list-style: none; padding: 0; font-size: 0.95rem; }
-        .exp-list li { margin-bottom: 8px; padding-left: 15px; position: relative; }
-        .exp-list li::before { content: "•"; color: var(--primary-color); position: absolute; left: 0; }
 
-        /* 核心服務卡片樣式 */
-        .course-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
-        .card { background: white; padding: 40px; border-radius: 15px; border-top: 5px solid var(--primary-color); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-        
-        footer { background: var(--dark-color); color: #888; text-align: center; padding: 40px 20px; }
-        
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .section { padding: 40px 5%; }
+        /* 資歷區塊 */
+        .exp-container { 
+            background: var(--card-bg); 
+            padding: 45px; 
+            border-radius: 5px; 
+            border: 1px solid #333;
+            box-shadow: 20px 20px 60px rgba(0,0,0,0.5);
         }
-    </style>
-</head>
-<body>
-
-<header>
-    <div class="logo" style="font-weight: bold; font-size: 1.2rem;">POSHU WANG 汪瀞教練</div>
-    <nav>
-        <a href="#about" style="color:white; text-decoration:none; margin-left:20px;">關於教練</a>
-        <a href="#system" style="color:white; text-decoration:none; margin-left:20px;">I30系統</a>
-        <a href="#contact" style="color:white; text-decoration:none; margin-left:20px;">聯繫諮詢</a>
-    </nav>
-</header>
-
-<section class="hero">
-    <h1>POSHU WANG</h1>
-    <p style="font-size: 1.2rem; letter-spacing: 3px;">21 年專業淬鍊 · 科學化體態管理</p>
-</section>
-
-<section id="about" class="section">
-    <div style="margin-bottom: 40px;">
-        <h2 style="font-size: 2.2rem; border-left: 5px solid var(--primary-color); padding-left: 15px; margin-bottom: 20px;">關於教練</h2>
-        <p style="font-size: 1.15rem; line-height: 1.8; margin-bottom: 15px; width: 100%;">
-            我是汪瀞，擁有超過 21 年的健身教學現場經驗，結合學術管理與實戰技術，致力於打造最高效的訓練體驗。
-        </p>
-        <div>
-            <span class="highlight">國立體育大學管理系碩士班</span> | <span class="highlight">13 年健身工作室經營者</span>
-        </div>
-    </div>
-
-    <div style="display: flex; gap: 40px; align-items: start; flex-wrap: wrap;">
-        <div style="flex: 2; min-width: 350px;">
-            <div class="exp-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
-                <div>
-                    <div class="exp-title">專業認證</div>
-                    <ul class="exp-list">
-                        <li>AFAA_WT/PFT 美國有氧體適能協會</li>
-                        <li>NSCA_CPT 美國國家肌力與體能促進協會</li>
-                        <li>ACE_CPT 美國運動委員會</li>
-                        <li>CrossFit - L2 / Weightlifting L1</li>
-                        <li>KBC - L2 & Instructor 培訓講師</li>
-                        <li>TRX - STC 懸吊訓練認證</li>
-                        <li>RTS 美國抗阻訓練專家認證</li>
-                    </ul>
-                </div>
-                <div>
-                    <div class="exp-title">資歷背景</div>
-                    <ul class="exp-list">
-                        <li>UnderArmour 簽約教練及講師</li>
-                        <li>激活體能中心負責人 2012-至今</li>
-                        <li>CrossFit 麒麟 創辦人 2015-2020</li>
-                        <li>AFAA 教育指導陣容 2007-至今</li>
-                        <li>陸軍 871 特戰群外聘教官</li>
-                        <li>極限健身中心私人教練</li>
-                    </ul>
-                    <div class="exp-title" style="margin-top: 15px;">專長項目</div>
-                    <p style="font-size: 0.95rem; font-weight: bold;">拳擊 · 舉重 · 壺鈴運動</p>
-                </div>
-            </div>
-        </div>
-        <div style="flex: 1; text-align: center; min-width: 300px;">
-            <img src="coach-photo.jpg" alt="汪瀞教練" style="width: 100%; max-width: 450px; border-radius: 15px; box-shadow: 15px 15px 0px rgba(212, 163, 115, 0.3);">
-        </div>
-    </div>
-</section>
-
-<section id="system" class="section" style="background: #fff; border-top: 1px solid #eee;">
-    <h2 style="text-align: center; font-size: 2rem; margin-bottom: 40px;">專業服務項目</h2>
-    <div class="course-grid">
-        <div class="card">
-            <h3>I30 訓練系統</h3>
-            <p style="color: #555;">模組化的功能性力量與體能訓練系統。我們將動作精確標準化，讓每一滴汗水都轉化為可視化的進步指標。</p>
-        </div>
-        <div class="card">
-            <h3>【瀞食】</h3>
-            <p style="color: #555;">結合管理學思維，提供高效、營養、高品質的飲食管理方案。讓飲食不再是訓練壓力，而是最強成效後援。</p>
-        </div>
-        <div class="card">
-            <h3>1-on-1 線上指導</h3>
-            <p style="color: #555;">打破地理限制，提供精確動作校正與個人化課表，將 21 年教學精華透過數位化服務呈現給每一位學員。</p>
-        </div>
-    </div>
-</section>
-
-<section id="contact" class="section" style="text-align: center; background: #f8f9fa;">
-    <h2 style="margin-bottom: 20px; font-size: 2.2rem;">開啟你的科學化訓練</h2>
-    <p style="margin-bottom: 40px; color: #666;">專業諮詢、實體課程預約或系統合作，歡迎直接聯繫。</p>
-    
-    <a href="https://line.me/ti/p/GU_nZ4V-H7" target="_blank" style="display: inline-block; background: #06C755; color: white; padding: 18px 50px; border-radius: 50px; text-decoration: none; font-size: 1.25rem; font-weight: bold; box-shadow: 0 10px 20px rgba(6, 199, 85, 0.2);">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg" style="width: 25px; vertical-align: middle; margin-right: 12px;">
-        立即加 LINE 諮詢
-    </a>
-</section>
-
-<a href="https://line.me/ti/p/GU_nZ4V-H7" target="_blank" style="position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: #06C755; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 9999;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg" style="width: 35px;">
-</a>
-
-<footer>
-    &copy; 2026 POSHU WANG | 桃園藝文特區 | I30 訓練系統
-</footer>
-
-</body>
-</html>
+        .exp-title { 
+            color: var(--primary-color); 
+            font-weight: bold; 
+            border-left: 3px solid var(--primary-color); 
+            padding-left: 15px; 
+            margin-bottom: 20px; 
+            font-size: 1.3rem; 
+            letter-spacing: 1px;
+        }
+        .exp-list { list-style: none; padding: 0; font-size: 1rem; color: var(--text-muted); }
+        .exp-list li { margin-bottom: 10px; padding-left: 15px; position: relative; }
+        .exp-list li::before { content: "›"; color: var(--primary-color); position: absolute
